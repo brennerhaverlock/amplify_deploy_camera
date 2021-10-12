@@ -13,7 +13,7 @@ export default function App() {
 
   const [startCamera, setStartCamera] = React.useState(false)
   const [previewVisible, setPreviewVisible] = React.useState(false)
-  const [capturedImage, setCapturedImage] = React.useState(null)
+  const [capturedImage, setCapturedImage] = React.useState<any>(null)
   const [cameraType, setCameraType] = React.useState(Camera.Constants.Type.back)
   const [flashMode, setFlashMode] = React.useState('off')
   const [type, setType] = useState(Camera.Constants.Type.back);
@@ -92,8 +92,7 @@ export default function App() {
     }
   }
   return (
-    <div className="App">
-      <View style={styles.container}>
+    <View style={styles.container}>
       {startCamera ? (
         <View
           style={{
@@ -319,7 +318,7 @@ const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
         </View>
       </ImageBackground>
     </View>
-    </div>
+  )
   );
 }
 
